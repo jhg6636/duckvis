@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.catshi.core.types.CityTypeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-17T06:19:05" hostname="jeonghyeongyuui-MacBookPro.local" time="0.012">
+  <properties/>
+  <testcase name="스트링에서 도시타입 리턴()" classname="com.catshi.core.types.CityTypeTest" time="0.012"/>
+  <system-out><![CDATA[서울
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

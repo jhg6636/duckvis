@@ -1,0 +1,5 @@
+rootProject.name = "catshi"
+
+include 'bob'
+include 'core'
+include 'nuguri'

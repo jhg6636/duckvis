@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fb92a875-7a63-4587-a6ee-5e37909b8680" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/bob">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/core">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/nuguri">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/bob">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/core">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+                <item name="bob" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+                <item name="bob" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+                <item name="bob" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="catshi" type="f1a62948:ProjectNode" />
+                <item name="bob" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Script" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="afccc223-51fc-4f30-8f64-4b866822b94c" />
+  </component>
+  <component name="GroovyConsoleState">
+    <option name="list">
+      <list>
+        <Entry>
+          <option name="moduleName" value="catshi.bob" />
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
+        </Entry>
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1oYLoLDNDJ2L0CLR31MaLo9QfP7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;h2" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Properties&#10;kotlin" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/nuguri/src/test/kotlin/com/catshi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nuguri/src/main/kotlin/com/catshi/nuguri/config" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nuguri/src/main/kotlin/com/catshi/nuguri/config" />
+      <recent name="$PROJECT_DIR$/bob/src/main/kotlin" />
+      <recent name="$PROJECT_DIR$/bob/src/test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/bob/src/test/kotlin/com/catshi/bob" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.catshi.bob.dtos" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.catshi.core.exceptions" />
+      <recent name="com.catshi.bob.services" />
+      <recent name="com.catshi.core.utils" />
+      <recent name="com.catshi.core.domain" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.catshi.bob" />
+      <recent name="com.catshi.core" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.catshi.bob.ui" />
+      <recent name="com.catshi.core.types" />
+      <recent name="com.catshi.bob.domain" />
+      <recent name="com.catshi.bob.services" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.catshi.bob.ui.command" />
+      <recent name="com.catshi.nuguri" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.catshi:bob [bootJar]">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BobServiceTest.1명이 티켓 2개 가지고 있을 때 밥팀 짜기" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.catshi.bob.services.BobServiceTest.1명이 티켓 2개 가지고 있을 때 밥팀 짜기&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":bob:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BobSlackHandlerTest.밥통계" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.catshi.bob.ui.BobSlackHandlerTest.밥통계&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":bob:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="catshi [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="catshi:bob [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bob" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="catshi:bob [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bob" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BobApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bob.bob.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.bob.BobApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BobApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.bob.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.bob.BobApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BobApplication (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshiKt.bob.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.bob.BobApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BobApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.bob.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.bob.BobApplication" />
+      <option name="ACTIVE_PROFILES" value="prod" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BobApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.bob.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.bob.BobApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.core.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.core.CoreApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.core.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.core.CoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreApplication (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bob.core.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.core.CoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreApplication (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshiKt.core.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.core.CoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.core.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.core.CoreApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="root.nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.nuguri.NuguriApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.nuguri.NuguriApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="root.nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.nuguri.NuguriApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.nuguri.NuguriApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication (5)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bob.nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.nuguri.NuguriApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication (6)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshiKt.nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.nuguri.NuguriApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NuguriApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.nuguri.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.nuguri.NuguriApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="catshi.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.catshi.RootApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BobApplication" />
+      <item itemvalue="Spring Boot.BobApplication (2)" />
+      <item itemvalue="Spring Boot.CoreApplication" />
+      <item itemvalue="Spring Boot.CoreApplication (1)" />
+      <item itemvalue="Spring Boot.CoreApplication (2)" />
+      <item itemvalue="Spring Boot.NuguriApplication" />
+      <item itemvalue="Spring Boot.NuguriApplication (1)" />
+      <item itemvalue="Spring Boot.NuguriApplication (2)" />
+      <item itemvalue="Spring Boot.NuguriApplication (3)" />
+      <item itemvalue="Spring Boot.NuguriApplication (4)" />
+      <item itemvalue="Spring Boot.RootApplication" />
+      <item itemvalue="Spring Boot.BobApplication (1)" />
+      <item itemvalue="Spring Boot.CoreApplication (3)" />
+      <item itemvalue="Spring Boot.NuguriApplication (5)" />
+      <item itemvalue="Spring Boot.BobApplication (3)" />
+      <item itemvalue="Spring Boot.CoreApplication (4)" />
+      <item itemvalue="Spring Boot.NuguriApplication (6)" />
+      <item itemvalue="Gradle.catshi:bob [test]" />
+      <item itemvalue="Gradle.catshi:bob [bootJar]" />
+      <item itemvalue="Gradle.BobSlackHandlerTest.밥통계" />
+      <item itemvalue="Gradle.catshi [bootJar]" />
+      <item itemvalue="Gradle.BobServiceTest.1명이 티켓 2개 가지고 있을 때 밥팀 짜기" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.catshi:bob [bootJar]" />
+        <item itemvalue="Gradle.catshi:bob [test]" />
+        <item itemvalue="Gradle.BobServiceTest.1명이 티켓 2개 가지고 있을 때 밥팀 짜기" />
+        <item itemvalue="Gradle.catshi [bootJar]" />
+        <item itemvalue="Gradle.BobSlackHandlerTest.밥통계" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb92a875-7a63-4587-a6ee-5e37909b8680" name="Default Changelist" comment="" />
+      <created>1613458752945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613458752945</updated>
+      <workItem from="1613458754096" duration="3201000" />
+      <workItem from="1613462983165" duration="6956000" />
+      <workItem from="1613543700560" duration="1447000" />
+      <workItem from="1613549205765" duration="2006000" />
+      <workItem from="1613558344099" duration="10072000" />
+      <workItem from="1613643921772" duration="68210000" />
+      <workItem from="1614332232099" duration="6131000" />
+      <workItem from="1614747422380" duration="3989000" />
+      <workItem from="1614753367152" duration="5802000" />
+      <workItem from="1614760757026" duration="16394000" />
+      <workItem from="1614843808999" duration="61718000" />
+      <workItem from="1615436590579" duration="74874000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

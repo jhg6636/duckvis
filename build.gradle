@@ -1,0 +1,194 @@
+plugins {
+//    id 'groovy'
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.7.2'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.31'
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.jetbrains.kotlin.plugin.allopen' version '1.4.30-RC'
+    id 'org.jetbrains.kotlin.plugin.noarg' version '1.4.30-RC'
+    id 'org.jetbrains.kotlin.kapt' version '1.4.21'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.4.30-RC'
+    id 'org.jetbrains.kotlin.plugin.spring' version '1.4.30-RC'
+}
+
+allprojects {
+    apply plugin : 'org.jetbrains.kotlin.jvm'
+    apply plugin : 'org.springframework.boot'
+    apply plugin : 'io.spring.dependency-management'
+    apply plugin : 'org.jetbrains.kotlin.plugin.allopen'
+    apply plugin : 'org.jetbrains.kotlin.plugin.noarg'
+    apply plugin : 'org.jetbrains.kotlin.kapt'
+    apply plugin : 'org.jetbrains.kotlin.plugin.jpa'
+    apply plugin : 'org.jetbrains.kotlin.plugin.spring'
+    apply plugin : "kotlin"
+    apply plugin : "kotlin-noarg"
+    noArg {
+        annotation 'javax.persistence.Entity'
+    }
+    apply plugin : "kotlin-allopen"
+    allOpen {
+        annotation 'javax.persistence.Entity'
+    }
+
+    group = "com.catshi"
+//    version = "0.2.2-SNAPSHOT"
+    version = "0.2.2-RELEASE"
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+        implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+        implementation 'org.jetbrains.kotlin:kotlin-reflect'
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+        implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+        implementation 'com.querydsl:querydsl-jpa'
+        implementation 'com.querydsl:querydsl-apt::jpa'
+        runtimeOnly 'mysql:mysql-connector-java'
+        kapt 'com.querydsl:querydsl-apt::jpa'
+        annotationProcessor 'com.querydsl:querydsl-apt::jpa'
+        implementation 'com.google.code.gson:gson'
+        compileOnly 'org.projectlombok:lombok'
+        developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    compileKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    test {
+        useJUnitPlatform()
+        dependencies {
+            runtimeOnly 'com.h2database:h2'
+        }
+    }
+
+    jar.enabled = true
+}
+
+project(':bob') {
+    dependencies {
+        implementation project(':core')
+    }
+}
+
+project(':nuguri') {
+    dependencies {
+        implementation project(':core')
+    }
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.3.2'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+
+//test {
+//    useJUnitPlatform()
+//}
+
+//tasks.withType(org.jetbrains.kotlin.gradle.tasks.kotlinCompile).all {
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
+//}
+
+//plugins {
+//    id("org.springframework.boot") version "2.4.2"
+//    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+//    id("org.jetbrains.kotlin.plugin.allopen") version "1.4.30-RC"
+//    id("org.jetbrains.kotlin.plugin.noarg") version "1.4.30-RC"
+////    kotlin("jvm") version "1.4.21"
+////    kotlin("plugin.spring") version "1.4.21"
+////    kotlin("plugin.jpa") version "1.4.21"
+////    kotlin("kapt") version "1.4.21"
+////    application
+//}
+//
+//allprojects {
+////    apply(plugin = "org.jetbrains.kotlin.jvm")
+////    apply(plugin = "org.springframework.boot")
+////    apply(plugin = "io.spring.dependency-management")
+////    apply(plugin = "org.jetbrains.kotlin.plugin.allopen")
+////    apply(plugin = "org.jetbrains.kotlin.plugin.noarg")
+////    apply(plugin = "org.jetbrains.kotlin.kapt")
+//
+//    allOpen {
+//        annotation("javax.persistence.Entity")
+//    }
+//
+//    noArg {
+//        annotation("javax.persistence.Entity")
+//    }
+//    group = "com.catshi"
+//    version = "0.0.1-SNAPSHOT"
+////    java.sourceCompatibility = JavaVersion.VERSION_11
+//
+//    configurations {
+//        compileOnly {
+////            extendsFrom(configurations.annotationProcessor.get())
+//        }
+//    }
+//
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+//        implementation("org.springframework.boot:spring-boot-starter-jdbc")
+//        implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+//        implementation("org.jetbrains.kotlin:kotlin-reflect")
+//        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//        implementation("org.springframework.boot:spring-boot-starter-web")
+//        implementation("org.junit.jupiter:junit-jupiter:5.4.2")
+//        implementation("org.junit.jupiter:junit-jupiter:5.4.2")
+//        implementation("com.querydsl:querydsl-jpa")
+//        implementation("com.querydsl:querydsl-apt::jpa")
+//        kapt("com.querydsl:querydsl-apt::jpa")
+//        compileOnly("com.google.code.gson:gson")
+//        compileOnly("org.projectlombok:lombok")
+//        developmentOnly("org.springframework.boot:spring-boot-devtools")
+//        runtimeOnly("com.h2database:h2")
+//        annotationProcessor("org.projectlombok:lombok")
+//        testImplementation("org.springframework.boot:spring-boot-starter-test")
+//    }
+//}
+//
+//project(":bob") {
+//    dependencies {
+//        implementation(project(":core"))
+//    }
+//}
+//
+//project(":nuguri") {
+//    dependencies {
+//        implementation(project(":core"))
+//    }
+//}
+//
+////tasks.withType<Test> {
+////    useJUnitPlatform()
+////}
+//val compileKotlin: KotlinCompile by tasks
+//compileKotlin.kotlinOptions {
+//    freeCompilerArgs = listOf("-Xinline-classes")
+//}
