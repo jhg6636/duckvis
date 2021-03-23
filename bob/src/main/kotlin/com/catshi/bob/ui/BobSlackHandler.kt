@@ -6,6 +6,7 @@ import com.catshi.bob.dtos.SlackRequestDto
 import com.catshi.bob.dtos.TicketDto
 import com.catshi.bob.exceptions.*
 import com.catshi.bob.services.*
+import com.catshi.bob.types.BobStyleType
 import com.catshi.bob.types.BobTimeType
 import com.catshi.bob.types.CommandType
 import com.catshi.bob.ui.command.*
@@ -47,15 +48,17 @@ class BobSlackHandler(
         return "hello, I'm duckvis ${TimeHandler.nowDateTime()}"
     }
 
-//    @PostMapping("slack/events")
+//    @PostMapping("slack/event")
 //    fun challenge(@RequestBody challengeMessage: String): String {
 //        var jsonObject = JsonParser.parseString(challengeMessage).asJsonObject
 //        return jsonObject.get("challenge").toString()
 //    }
 
     @Transactional
-    @PostMapping("slack/events")
+    @PostMapping("slack/event")
     fun slackEvents(@RequestBody body: String): String {
+//        println("here")
+//        println(body)
         val slackMessageDto = jsonBodyToDto(body)
         val postString = slackResponse(slackMessageDto.text, slackMessageDto.userCode)
         return postMessageRequest(postString).toString()
@@ -105,19 +108,19 @@ class BobSlackHandler(
             when (bobCommand) {
                 is ResponseMe -> {
                     val mealType = BobTimeType.of(TimeHandler.nowDateTime())
-                    return TicketDto(bobService.responseMe(userId), ticketRepository.isFirst(mealType)).toString()
+                    return TicketDto(bobService.responseMe(userId), ticketRepository.isFirst(mealType, BobStyleType.ANYTHING)).toString()
                 }
                 is ResponseMeSpecificPlace -> {
                     val mealType = BobTimeType.of(TimeHandler.nowDateTime())
-                    return TicketDto(bobService.responseMeSpecificPlace(userId, bobCommand.city), ticketRepository.isFirst(mealType)).toString()
+                    return TicketDto(bobService.responseMeSpecificPlace(userId, bobCommand.city), ticketRepository.isFirst(mealType, BobStyleType.ANYTHING)).toString()
                 }
                 is ResponseVegetarian -> {
                     val mealType = BobTimeType.of(TimeHandler.nowDateTime())
-                    return TicketDto(bobService.responseVegetarian(userId), ticketRepository.isFirst(mealType)).toString()
+                    return TicketDto(bobService.responseVegetarian(userId), ticketRepository.isFirst(mealType, BobStyleType.VEGETARIAN)).toString()
                 }
                 is ResponseVegetarianSpecificPlace -> {
                     val mealType = BobTimeType.of(TimeHandler.nowDateTime())
-                    return TicketDto(bobService.responseVegetarianSpecificPlace(userId, bobCommand.city), ticketRepository.isFirst(mealType)).toString()
+                    return TicketDto(bobService.responseVegetarianSpecificPlace(userId, bobCommand.city), ticketRepository.isFirst(mealType, BobStyleType.VEGETARIAN)).toString()
                 }
                 is ResponseAddMenu -> return "철이 없었죠 ${bobService.responseAddMenu(bobCommand.menu.name)} 메뉴 추가도 안해놨다는게.. 고마워요 호호호호호"
                 is ResponseRemoveMenu -> return "${bobService.responseRemoveMenu(bobCommand.menu.name)} 메뉴가 제거되었어요옹"
@@ -140,6 +143,13 @@ class BobSlackHandler(
                     return bobService.responseHelp()
                 }
                 is ResponseRecommendMenu -> return "오늘의 비스 추천 메뉴는 ${bobService.responseRecommendMenu(bobCommand.exceptingMenus.map{ it.name }).name}에요옹"
+                is ResponseDetermineBobTeam -> {
+                    val thisMealBobTeams = bobService.determineBobTeam(CityType.SEOUL, bobCommand.mealType)
+                    thisMealBobTeams.toString().split("\n").forEach {
+                        postMessageRequest(it)
+                    }
+                    return ""
+                }
                 null -> return ""
                 else -> return ""
             }
@@ -168,6 +178,10 @@ class BobSlackHandler(
             return ""
         } catch (e: NotRegisteredUserException) {
             return "누구세요옹"
+        } catch (e: NotEnoughBobTicketException) {
+            return "서울은 오늘 밥팀이 없어요옹~ 밥들 챙겨 먹고 다녀요."
+        } catch (e: NullPointerException) {
+            return ""
         }
     }
 
@@ -201,6 +215,7 @@ class BobSlackHandler(
             String::class
         )
         val jsonObject = JsonParser.parseString(responseEntity.body).asJsonObject
+        val user = jsonObject?.get("user") ?: throw NullPointerException()
         val uncleanedName = jsonObject.get("user").asJsonObject.get("profile").asJsonObject.get("display_name")
         println(uncleanedName.toString().trim('\"'))
         return uncleanedName.toString().trim('\"')

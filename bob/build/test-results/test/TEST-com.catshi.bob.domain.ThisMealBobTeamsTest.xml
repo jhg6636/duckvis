@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.catshi.bob.domain.ThisMealBobTeamsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-19T05:56:06" hostname="jeonghyeongyuui-MacBookPro.local" time="0.004">
+<testsuite name="com.catshi.bob.domain.ThisMealBobTeamsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-23T07:29:20" hostname="jeonghyeongyuui-MacBookPro.local" time="0.004">
   <properties/>
   <testcase name="아무거나 먹는 인간만 있을 때()" classname="com.catshi.bob.domain.ThisMealBobTeamsTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>

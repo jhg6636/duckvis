@@ -1,6 +1,7 @@
 package com.catshi.bob.ui.command
 
 import com.catshi.bob.domain.Menu
+import com.catshi.bob.types.BobTimeType
 import com.catshi.bob.types.StatisticsOption
 import com.catshi.core.types.CityType
 import org.springframework.stereotype.Component
@@ -19,3 +20,4 @@ class ResponseRemoveMenu(val menu: Menu): BobCommand
 class ResponseRecommendMenu(val exceptingMenus: List<Menu>): BobCommand
 class ResponseAllMenu(): BobCommand
 class ResponseHelp(): BobCommand
+class ResponseDetermineBobTeam(val mealType: BobTimeType): BobCommand

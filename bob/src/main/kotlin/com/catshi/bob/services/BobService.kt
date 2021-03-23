@@ -114,40 +114,27 @@ class BobService(
         decisionLogic: TeamDecisionLogic, teamSortStrategy: TeamSortStrategy
     ): ThisMealBobTeams {
         markFirstTicket(bobTimeType)
-//        leaveFirstTicketsOnly(bobTimeType)
         val allTickets = bobTicketQueryDslRepository.findThisMealAllTickets(bobTimeType)
         checkBobTeamMatched(bobTimeType, allTickets.size)
+        val bobTeams = BobTeamMaker(allTickets, teamSortStrategy).make(decisionLogic)
+        archiveBobTeam(bobTeams)
 
-        return BobTeamMaker(allTickets, teamSortStrategy).make(decisionLogic)
+        return bobTeams
     }
+
 
     @Transactional
-    fun leaveFirstTicketsOnly(bobTimeType: BobTimeType) {
-        val allTickets = bobTicketQueryDslRepository.findThisMealAllTickets(bobTimeType)
-        val allUsers = allTickets.map { it.user }.distinct()
-
-        if (allTickets.size != allUsers.size) {
-            allUsers
-                .filter {
-                    bobTicketQueryDslRepository.hasMoreThanOneTicket(it.id, bobTimeType)
-                }
-                .forEach {
-                    val usersTicket = allTickets.filter { ticket -> ticket.user.id == it.id }
-                    usersTicket.sortedBy { ticket -> ticket.time }
-                        .subList(1, usersTicket.size)
-                        .forEach { ticket -> bobTicketRepository.delete(ticket) }
-                }
-        }
-    }
-
-    private fun checkBobTeamMatched(bobTimeType: BobTimeType, waitingTicketNumber: Int) {
+    fun checkBobTeamMatched(bobTimeType: BobTimeType, waitingTicketNumber: Int) {
+        println(waitingTicketNumber)
         val matchedTicketNumber = bobHistoryQueryDslRepository.countThisMealHistory(bobTimeType).toInt()
+        println(matchedTicketNumber)
         if (waitingTicketNumber != 0 && matchedTicketNumber == waitingTicketNumber) {
             throw BobTeamAlreadyMatchedException()
         }
     }
 
-    private fun markFirstTicket(bobTimeType: BobTimeType) {
+    @Transactional
+    fun markFirstTicket(bobTimeType: BobTimeType) {
         bobTicketQueryDslRepository.findThisMealAllTickets(bobTimeType)
             .filter { it.isAnything }
             .minByOrNull { it.time }?.apply {

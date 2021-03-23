@@ -12,6 +12,7 @@ import com.catshi.core.utils.TimeHandler
 import com.catshi.nuguri.domain.*
 import com.catshi.nuguri.exceptions.*
 import com.catshi.nuguri.services.Nuguri
+import com.catshi.nuguri.types.AttendanceOption
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
@@ -78,7 +79,7 @@ open class NuguriTest @Autowired constructor(
 
     @Transactional
     open fun attendHoursBefore(user: User, project: Project, hour: Long): AttendanceCard {
-        return AttendanceCard(user.id, project.id, AttendanceType.WORK, TimeHandler.nowDateTime().minusHours(hour))
+        return AttendanceCard(user.id, project.id, CardType.WORK, AttendanceOption.NORMAL, TimeHandler.nowDateTime().minusHours(hour))
             .apply { attendanceCardRepository.save(this) }
     }
 
@@ -267,7 +268,7 @@ open class NuguriTest @Autowired constructor(
         attendHoursBefore(user1, project1, 3)
 
         // when & then
-        assertThrows<AlreadyLoggedInProjectException> {
+        assertThrows<AlreadyAttendedException> {
             nuguri.responseLogin(user1.id, project1.id)
         }
     }

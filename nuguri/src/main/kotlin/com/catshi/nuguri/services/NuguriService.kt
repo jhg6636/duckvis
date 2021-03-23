@@ -12,10 +12,10 @@ import com.catshi.core.utils.TimeHandler
 import com.catshi.nuguri.domain.*
 import com.catshi.nuguri.dtos.HowLongIWorkedResponse
 import com.catshi.nuguri.exceptions.*
+import com.catshi.nuguri.types.AttendanceOption
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -31,20 +31,22 @@ open class NuguriService(
     @Transactional
     override fun responseLogin(userId: Long, projectId: Long): AttendanceCard {
         val nowWorkingCard = getNowWorkingCard(userId)
-        if (nowWorkingCard?.projectId == projectId) throw AlreadyLoggedInProjectException()
+        if (nowWorkingCard?.projectId == projectId) throw AlreadyAttendedException()
         else if (nowWorkingCard != null) logOut(nowWorkingCard)
         return createAttendanceCard(userId, projectId)
     }
 
     private fun createAttendanceCard(userId: Long, projectId: Long): AttendanceCard {
-        return attendanceCardRepository.save(
-            AttendanceCard(
-                userId,
-                projectId,
-                AttendanceType.WORK,
-                TimeHandler.nowDateTime()
-            )
-        )
+        TODO()
+//        return attendanceCardRepository.save(
+//            AttendanceCard(
+//                userId,
+//                projectId,
+//                CardType.WORK,
+//                NORMAL,
+//                TimeHandler.nowDateTime()
+//            )
+//        )
     }
 
     @Transactional
@@ -77,8 +79,9 @@ open class NuguriService(
             AttendanceCard(
                 userId,
                 projectId,
-                AttendanceType.MISTAKE,
-                LocalDateTime.now(ZoneId.of("Asia/Seoul")),
+                CardType.MISTAKE,
+                AttendanceOption.NORMAL,
+                TimeHandler.nowDateTime(),
                 durationMinutes * 60
             )
         )

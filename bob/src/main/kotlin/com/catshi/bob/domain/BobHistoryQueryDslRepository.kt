@@ -4,6 +4,7 @@ import com.catshi.bob.domain.QBobHistory.bobHistory
 import com.catshi.bob.types.BobTimeType
 import com.catshi.core.domain.User
 import com.catshi.core.utils.TimeHandler
+import com.querydsl.core.types.dsl.BooleanExpression
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
@@ -36,7 +37,7 @@ class BobHistoryQueryDslRepository(
             )
             .fetch()
         val returnList = mutableListOf<User>()
-        eatDates.forEach {
+        eatDates.forEach { it ->
             val teammates = queryFactory
                 .select(bobHistory)
                 .from(bobHistory)
@@ -64,6 +65,9 @@ class BobHistoryQueryDslRepository(
             ).fetchCount()
     }
 
-    private val isThisMonth = bobHistory.bobTicket.date.between(TimeHandler.nowDate().withDayOfMonth(1),
-        TimeHandler.nowDate().withDayOfMonth(TimeHandler.nowDate().lengthOfMonth()))
+    private val isThisMonth: BooleanExpression
+        get() = bobHistory.bobTicket.date.between(
+            TimeHandler.nowDate().withDayOfMonth(1),
+            TimeHandler.nowDate().withDayOfMonth(TimeHandler.nowDate().lengthOfMonth())
+        )
 }

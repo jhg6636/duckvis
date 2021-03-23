@@ -4,6 +4,7 @@ import com.catshi.bob.domain.BobHistoryRepository
 import com.catshi.bob.domain.BobTicket
 import com.catshi.bob.domain.BobTicketRepository
 import com.catshi.bob.domain.MenuRepository
+import com.catshi.bob.exceptions.BobTeamAlreadyMatchedException
 import com.catshi.bob.exceptions.NeverEatThisMonthException
 import com.catshi.bob.exceptions.NotEnoughBobTicketException
 import com.catshi.bob.exceptions.NotTicketTimeException
@@ -134,7 +135,7 @@ class BobServiceTest(
         val bobTeams = bobService.determineBobTeam(CityType.SEOUL, BobTimeType.LUNCH, FifoTeamDecisionLogic(), FifoTeamSortStrategy)
 
         // when
-        val bobHistories = bobService.archiveBobTeam(bobTeams)
+        val bobHistories = bobHistoryRepository.findAll()
 
         // then
         assertThat(bobHistories).hasSize(4)
@@ -155,7 +156,6 @@ class BobServiceTest(
         bobService.responseMe(user4.id, now)
 
         val bobTeams = bobService.determineBobTeam(CityType.SEOUL, BobTimeType.LUNCH, FifoTeamDecisionLogic(), FifoTeamSortStrategy)
-        bobService.archiveBobTeam(bobTeams)
 
         // when
         val statisticsDto = bobService.responseStatistics(user3.id, StatisticsOption.ALL)
@@ -209,6 +209,29 @@ class BobServiceTest(
         // when & then
         assertThrows<DataIntegrityViolationException> {
             ticketRepository.saveAll(listOf(ticket1, ticket2))
+        }
+    }
+
+    @Test
+    @Transactional
+    fun `밥팀 짜진 후 짜졌는지 확인한다`() {
+        // given
+        val user1 = createUser("user1")
+        val user2 = createUser("user2")
+        val user3 = createUser("user3")
+        val user4 = createUser("user4")
+
+        val ticket1 = createTodayLunchTicket(user1, issuedOrderType = IssuedOrderType.FIRST)
+        val ticket2 = createTodayLunchTicket(user2)
+        val ticket3 = createTodayLunchTicket(user3)
+        val ticket4 = createTodayLunchTicket(user4)
+        ticketRepository.saveAll(listOf(ticket1, ticket2, ticket3, ticket4))
+
+        val bobTeams = bobService.determineBobTeam(CityType.SEOUL, BobTimeType.LUNCH)
+
+        // when & then
+        assertThrows<BobTeamAlreadyMatchedException> {
+            bobService.determineBobTeam(CityType.SEOUL, BobTimeType.LUNCH)
         }
     }
 

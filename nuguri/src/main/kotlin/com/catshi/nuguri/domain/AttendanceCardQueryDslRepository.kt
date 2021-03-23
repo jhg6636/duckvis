@@ -1,6 +1,5 @@
 package com.catshi.nuguri.domain
 
-import com.catshi.core.domain.User
 import com.catshi.nuguri.domain.QAttendanceCard.attendanceCard
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Component
@@ -37,7 +36,7 @@ class AttendanceCardQueryDslRepository(
             .select(attendanceCard)
             .from(attendanceCard)
             .where(
-                attendanceCard.type.eq(AttendanceType.MISTAKE),
+                attendanceCard.type.eq(CardType.MISTAKE),
                 attendanceCard.logoutDateTime.isNull
             )
             .fetch()
@@ -48,7 +47,7 @@ class AttendanceCardQueryDslRepository(
             .select(attendanceCard)
             .from(attendanceCard)
             .where(
-                attendanceCard.type.eq(AttendanceType.WORK),
+                attendanceCard.type.eq(CardType.WORK),
                 attendanceCard.logoutDateTime.isNull
             )
             .fetch()

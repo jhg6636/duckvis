@@ -22,7 +22,7 @@ public class BobSlackHandler {
     }
     
     @org.jetbrains.annotations.NotNull
-    @org.springframework.web.bind.annotation.PostMapping(value = {"slack/events"})
+    @org.springframework.web.bind.annotation.PostMapping(value = {"slack/event"})
     @org.springframework.transaction.annotation.Transactional
     public java.lang.String slackEvents(@org.jetbrains.annotations.NotNull
     @org.springframework.web.bind.annotation.RequestBody

@@ -13,7 +13,7 @@ import javax.persistence.*
 
 @Entity
 @EntityScan(basePackages = ["com.catshi.core"])
-@Table(uniqueConstraints = [ UniqueConstraint(columnNames = ["user_id", "date", "bob_time_type"]) ])
+@Table(uniqueConstraints = [ UniqueConstraint(columnNames = ["user_id", "date", "bobTimeType"]) ])
 class BobTicket(
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(nullable = false) val user: User,
     val date: LocalDate,

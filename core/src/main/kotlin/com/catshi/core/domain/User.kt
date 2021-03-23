@@ -29,16 +29,28 @@ class User(
         this.city = city
     }
 
-    fun changeName(name: String) {
-        this.name = name
+    fun setTeam(teamId: Long) {
+        if (this.teamId == null) {
+            this.teamId = teamId
+        } else if (multiTeam == "") {
+            this.multiTeam = "${this.teamId},${teamId}"
+        } else {
+            this.multiTeam += ",$teamId"
+        }
     }
 
-    fun checkSameName(name: String) {
-        if (this.name == name)
-            throw UserAlreadyExistsException()
-    }
-
-    fun isSameCity(city: CityType): Boolean {
-        return this.city == city
+    fun exitTeam(teamId: Long) {
+        if (this.multiTeam != "") {
+            val teamIdList = this.multiTeam.split(",")
+            val afterDeleted = teamIdList.filter { it.toLong() != teamId }
+            if (afterDeleted.size == 1) {
+                this.teamId = afterDeleted.first().toLong()
+                this.multiTeam = ""
+            } else {
+                this.multiTeam = afterDeleted.joinToString(",")
+            }
+        } else {
+            this.teamId = null
+        }
     }
 }

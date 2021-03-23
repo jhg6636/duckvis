@@ -1,6 +1,6 @@
 package com.catshi.nuguri.domain
 
-enum class AttendanceType {
+enum class CardType {
 
     WORK,
     MISTAKE

@@ -33,7 +33,8 @@ allprojects {
 
     group = "com.catshi"
 //    version = "0.2.2-SNAPSHOT"
-    version = "0.2.2-RELEASE"
+    version = "0.2.3-RELEASE"
+//    version = "0.2.2-CHALLENGE"
     sourceCompatibility = 1.8
 
     repositories {

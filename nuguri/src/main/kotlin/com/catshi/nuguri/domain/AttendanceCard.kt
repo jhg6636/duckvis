@@ -1,7 +1,7 @@
 package com.catshi.nuguri.domain
 
 import com.catshi.core.utils.TimeHandler
-import org.springframework.transaction.annotation.Transactional
+import com.catshi.nuguri.types.AttendanceOption
 import java.time.*
 import javax.persistence.*
 
@@ -11,7 +11,10 @@ class AttendanceCard(
     val projectId: Long,
 
     @Enumerated(EnumType.STRING)
-    val type: AttendanceType,
+    val type: CardType,
+
+    @Enumerated(EnumType.STRING)
+    val option: AttendanceOption,
     private val loginDateTime: LocalDateTime,
     var durationSeconds: Int? = null,
     var logoutDateTime: LocalDateTime? = null
@@ -26,14 +29,22 @@ class AttendanceCard(
         this.logoutDateTime = logoutDateTime
     }
 
-//    fun logOut() {
-//        saveLogoutTime(TimeHandler.nowDateTime())
-//        durationCalculate()
-//    }
+    fun logOut() {
+        saveLogoutTime(TimeHandler.nowDateTime())
+        durationCalculate()
+    }
 
     fun durationCalculate() {
         this.durationSeconds = (this.logoutDateTime!!.second - this.loginDateTime.second)
         + (this.logoutDateTime!!.minute - this.loginDateTime.minute) * 60
         + (this.logoutDateTime!!.hour - this.loginDateTime.hour) * 3600
+    }
+
+    fun isSameProjectId(projectId: Long): Boolean {
+        return this.projectId == projectId
+    }
+
+    fun isSameAttendanceOption(attendanceOption: AttendanceOption): Boolean {
+        return this.option == attendanceOption
     }
 }

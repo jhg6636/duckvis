@@ -47,7 +47,6 @@ class BobScheduler(
         cityList.forEach { city ->
             try {
                 val thisMealBobTeams = bob.determineBobTeam(city, bobTimeType)
-                bob.archiveBobTeam(thisMealBobTeams)
                 thisMealBobTeams.toString().split("\n").forEach {
                     slackHandler.postMessageRequest(it)
                 }

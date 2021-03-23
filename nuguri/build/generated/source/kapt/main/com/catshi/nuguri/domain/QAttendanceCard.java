@@ -29,9 +29,11 @@ public class QAttendanceCard extends EntityPathBase<AttendanceCard> {
 
     public final DateTimePath<java.time.LocalDateTime> logoutDateTime = createDateTime("logoutDateTime", java.time.LocalDateTime.class);
 
+    public final EnumPath<com.catshi.nuguri.types.AttendanceOption> option = createEnum("option", com.catshi.nuguri.types.AttendanceOption.class);
+
     public final NumberPath<Long> projectId = createNumber("projectId", Long.class);
 
-    public final EnumPath<AttendanceType> type = createEnum("type", AttendanceType.class);
+    public final EnumPath<CardType> type = createEnum("type", CardType.class);
 
     public final NumberPath<Long> userId = createNumber("userId", Long.class);
 

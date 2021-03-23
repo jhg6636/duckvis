@@ -5,6 +5,7 @@ import com.catshi.bob.types.BobStyleType
 import com.catshi.bob.types.BobTimeType
 import com.catshi.core.types.CityType
 import com.catshi.core.utils.TimeHandler
+import com.querydsl.core.types.dsl.BooleanExpression
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
@@ -40,15 +41,18 @@ class BobTicketQueryDslRepository(
     }
 
     @Transactional
-    fun isFirst(mealType: BobTimeType): Boolean {
-        return queryFactory
-            .select(bobTicket)
-            .from(bobTicket)
-            .where(
-                isToday,
-                bobTicket.bobTimeType.eq(mealType)
-            )
-            .fetchCount() == 1L
+    fun isFirst(mealType: BobTimeType, styleType: BobStyleType): Boolean {
+        synchronized(this) {
+            return queryFactory
+                .select(bobTicket)
+                .from(bobTicket)
+                .where(
+                    bobTicket.date.eq(TimeHandler.nowDate()),
+                    bobTicket.bobTimeType.eq(mealType),
+                    bobTicket.bobStyle.eq(styleType)
+                )
+                .fetchCount() == 1L
+        }
     }
 
     @Transactional
@@ -65,4 +69,8 @@ class BobTicketQueryDslRepository(
     }
 }
 
-private val isToday = bobTicket.date.eq(TimeHandler.nowDate())
+
+private val isToday: BooleanExpression
+    get() {
+        return bobTicket.date.eq(TimeHandler.nowDate())
+    }
