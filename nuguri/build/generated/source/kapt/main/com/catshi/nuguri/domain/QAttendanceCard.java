@@ -2,6 +2,8 @@ package com.catshi.nuguri.domain;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
+import com.duckvis.nuguri.domain.AttendanceCard;
+import com.duckvis.nuguri.domain.CardType;
 import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.PathMetadata;
@@ -19,17 +21,19 @@ public class QAttendanceCard extends EntityPathBase<AttendanceCard> {
 
     public static final QAttendanceCard attendanceCard = new QAttendanceCard("attendanceCard");
 
-    public final DateTimePath<java.time.LocalDateTime> createdDateTime = createDateTime("createdDateTime", java.time.LocalDateTime.class);
-
     public final NumberPath<Integer> durationSeconds = createNumber("durationSeconds", Integer.class);
 
     public final NumberPath<Integer> id = createNumber("id", Integer.class);
 
+    public final BooleanPath isExtended = createBoolean("isExtended");
+
+    public final BooleanPath isHoliday = createBoolean("isHoliday");
+
+    public final BooleanPath isNight = createBoolean("isNight");
+
     public final DateTimePath<java.time.LocalDateTime> loginDateTime = createDateTime("loginDateTime", java.time.LocalDateTime.class);
 
     public final DateTimePath<java.time.LocalDateTime> logoutDateTime = createDateTime("logoutDateTime", java.time.LocalDateTime.class);
-
-    public final EnumPath<com.catshi.nuguri.types.AttendanceOption> option = createEnum("option", com.catshi.nuguri.types.AttendanceOption.class);
 
     public final NumberPath<Long> projectId = createNumber("projectId", Long.class);
 

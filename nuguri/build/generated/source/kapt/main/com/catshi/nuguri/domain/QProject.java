@@ -2,6 +2,7 @@ package com.catshi.nuguri.domain;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
+import com.duckvis.nuguri.domain.Project;
 import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.PathMetadata;
@@ -21,11 +22,11 @@ public class QProject extends EntityPathBase<Project> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
+    public final BooleanPath isFinished = createBoolean("isFinished");
+
     public final StringPath name = createString("name");
 
     public final StringPath nickname = createString("nickname");
-
-    public final NumberPath<Long> teamId = createNumber("teamId", Long.class);
 
     public QProject(String variable) {
         super(Project.class, forVariable(variable));

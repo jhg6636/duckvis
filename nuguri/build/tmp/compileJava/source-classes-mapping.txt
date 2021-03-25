@@ -1,4 +1,12 @@
+com/catshi/nuguri/domain/QHoliday.java
+ com.catshi.nuguri.domain.QHoliday
+com/catshi/nuguri/domain/QUserProfile.java
+ com.catshi.nuguri.domain.QUserProfile
 com/catshi/nuguri/domain/QAttendanceCard.java
  com.catshi.nuguri.domain.QAttendanceCard
+com/catshi/nuguri/domain/QTeam.java
+ com.catshi.nuguri.domain.QTeam
+com/catshi/nuguri/domain/QUserTeam.java
+ com.catshi.nuguri.domain.QUserTeam
 com/catshi/nuguri/domain/QProject.java
  com.catshi.nuguri.domain.QProject

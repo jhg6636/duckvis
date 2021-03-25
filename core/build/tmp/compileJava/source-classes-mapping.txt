@@ -1,4 +1,2 @@
-com/catshi/core/domain/QTeam.java
- com.catshi.core.domain.QTeam
-com/catshi/core/domain/QUser.java
- com.catshi.core.domain.QUser
+com/duckvis/core/domain/QUser.java
+ com.duckvis.core.domain.QUser
