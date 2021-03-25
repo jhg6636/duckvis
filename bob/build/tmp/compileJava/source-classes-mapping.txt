@@ -1,6 +1,6 @@
-com/catshi/bob/domain/QMenu.java
- com.catshi.bob.domain.QMenu
-com/catshi/bob/domain/QBobTicket.java
- com.catshi.bob.domain.QBobTicket
-com/catshi/bob/domain/QBobHistory.java
- com.catshi.bob.domain.QBobHistory
+com/duckvis/bob/domain/QBobTicket.java
+ com.duckvis.bob.domain.QBobTicket
+com/duckvis/bob/domain/QBobHistory.java
+ com.duckvis.bob.domain.QBobHistory
+com/duckvis/bob/domain/QMenu.java
+ com.duckvis.bob.domain.QMenu

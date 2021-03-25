@@ -1,6 +1,6 @@
 package com.duckvis.nuguri.domain
 
-import com.catshi.nuguri.domain.QAttendanceCard.attendanceCard
+import com.duckvis.nuguri.domain.QAttendanceCard.attendanceCard
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Component
 import java.time.LocalDateTime

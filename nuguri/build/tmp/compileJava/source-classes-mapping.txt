@@ -1,12 +1,12 @@
-com/catshi/nuguri/domain/QHoliday.java
- com.catshi.nuguri.domain.QHoliday
-com/catshi/nuguri/domain/QUserProfile.java
- com.catshi.nuguri.domain.QUserProfile
-com/catshi/nuguri/domain/QAttendanceCard.java
- com.catshi.nuguri.domain.QAttendanceCard
-com/catshi/nuguri/domain/QTeam.java
- com.catshi.nuguri.domain.QTeam
-com/catshi/nuguri/domain/QUserTeam.java
- com.catshi.nuguri.domain.QUserTeam
-com/catshi/nuguri/domain/QProject.java
- com.catshi.nuguri.domain.QProject
+com/duckvis/nuguri/domain/QUserProfile.java
+ com.duckvis.nuguri.domain.QUserProfile
+com/duckvis/nuguri/domain/QTeam.java
+ com.duckvis.nuguri.domain.QTeam
+com/duckvis/nuguri/domain/QProject.java
+ com.duckvis.nuguri.domain.QProject
+com/duckvis/nuguri/domain/QHoliday.java
+ com.duckvis.nuguri.domain.QHoliday
+com/duckvis/nuguri/domain/QAttendanceCard.java
+ com.duckvis.nuguri.domain.QAttendanceCard
+com/duckvis/nuguri/domain/QUserTeam.java
+ com.duckvis.nuguri.domain.QUserTeam
