@@ -1,4 +1,4 @@
-rootProject.name = "catshi"
+rootProject.name = "duckvis"
 
 include 'bob'
 include 'core'

@@ -31,7 +31,7 @@ allprojects {
         annotation 'javax.persistence.Entity'
     }
 
-    group = "com.catshi"
+    group = "com.duckvis"
 //    version = "0.2.2-SNAPSHOT"
     version = "0.2.3-RELEASE"
 //    version = "0.2.2-CHALLENGE"
