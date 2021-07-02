@@ -1,33 +1,35 @@
 package com.duckvis.bob.services
 
-import com.duckvis.bob.domain.BobTicket
+import com.duckvis.core.domain.bob.BobTicket
 
 interface TeamSortStrategy {
 
-    fun sort(originalList: List<BobTicket>): List<BobTicket>
+  fun sort(originalList: List<BobTicket>): List<BobTicket>
 
 }
 
+// dev, prod
 object RandomTeamSortStrategy : TeamSortStrategy {
 
-    override fun sort(originalList: List<BobTicket>): List<BobTicket> {
-        return originalList.shuffled()
-    }
+  override fun sort(originalList: List<BobTicket>): List<BobTicket> {
+    return originalList.shuffled()
+  }
 
 }
 
+// local
 object FifoTeamSortStrategy : TeamSortStrategy {
 
-    override fun sort(originalList: List<BobTicket>): List<BobTicket> {
-        return originalList
-    }
+  override fun sort(originalList: List<BobTicket>): List<BobTicket> {
+    return originalList
+  }
 
 }
 
 object TicketTeamSortStrategy : TeamSortStrategy {
 
-    override fun sort(originalList: List<BobTicket>): List<BobTicket> {
-        return originalList.sortedBy { it.date }
-    }
+  override fun sort(originalList: List<BobTicket>): List<BobTicket> {
+    return originalList.sortedBy { it.date }
+  }
 
 }

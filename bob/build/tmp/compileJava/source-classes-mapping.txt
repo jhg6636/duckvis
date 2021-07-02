@@ -1,6 +1,10 @@
+com/duckvis/bob/domain/QOverMoney.java
+ com.duckvis.bob.domain.QOverMoney
 com/duckvis/bob/domain/QBobTicket.java
  com.duckvis.bob.domain.QBobTicket
 com/duckvis/bob/domain/QBobHistory.java
  com.duckvis.bob.domain.QBobHistory
+com/duckvis/bob/domain/QUserPay.java
+ com.duckvis.bob.domain.QUserPay
 com/duckvis/bob/domain/QMenu.java
  com.duckvis.bob.domain.QMenu

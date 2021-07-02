@@ -13,28 +13,38 @@ plugins {
 }
 
 allprojects {
-    apply plugin : 'org.jetbrains.kotlin.jvm'
-    apply plugin : 'org.springframework.boot'
-    apply plugin : 'io.spring.dependency-management'
-    apply plugin : 'org.jetbrains.kotlin.plugin.allopen'
-    apply plugin : 'org.jetbrains.kotlin.plugin.noarg'
-    apply plugin : 'org.jetbrains.kotlin.kapt'
-    apply plugin : 'org.jetbrains.kotlin.plugin.jpa'
-    apply plugin : 'org.jetbrains.kotlin.plugin.spring'
-    apply plugin : "kotlin"
-    apply plugin : "kotlin-noarg"
+    apply plugin: 'org.jetbrains.kotlin.jvm'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.jetbrains.kotlin.plugin.allopen'
+    apply plugin: 'org.jetbrains.kotlin.plugin.noarg'
+    apply plugin: 'org.jetbrains.kotlin.kapt'
+    apply plugin: 'org.jetbrains.kotlin.plugin.jpa'
+    apply plugin: 'org.jetbrains.kotlin.plugin.spring'
+    apply plugin: "kotlin"
+    apply plugin: "kotlin-noarg"
     noArg {
         annotation 'javax.persistence.Entity'
     }
-    apply plugin : "kotlin-allopen"
+    apply plugin: "kotlin-allopen"
     allOpen {
         annotation 'javax.persistence.Entity'
     }
 
     group = "com.duckvis"
-//    version = "0.2.2-SNAPSHOT"
-    version = "0.2.3-RELEASE"
+
+    // Bob Versions
+//    version = "1.0.1-SNAPSHOT"
+//    version = "2.0.0-RELEASE"
 //    version = "0.2.2-CHALLENGE"
+
+    // Nuguri Versions
+//    version = "0.0.1-SNAPSHOT"
+//    version = "2.0.0-RELEASE"
+//    version = "0.0.1-CHALLENGE"
+
+    // slack & scheduler
+    version = "1.1.1-RELEASE"
     sourceCompatibility = 1.8
 
     repositories {
@@ -52,8 +62,11 @@ allprojects {
         implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
         implementation 'com.querydsl:querydsl-jpa'
         implementation 'com.querydsl:querydsl-apt::jpa'
+        implementation 'org.springframework.retry:spring-retry:1.1.5.RELEASE'
+        implementation 'ch.qos.logback:logback-classic:1.2.3'
         runtimeOnly 'mysql:mysql-connector-java'
         kapt 'com.querydsl:querydsl-apt::jpa'
+        kapt 'org.springframework.boot:spring-boot-configuration-processor'
         annotationProcessor 'com.querydsl:querydsl-apt::jpa'
         implementation 'com.google.code.gson:gson'
         compileOnly 'org.projectlombok:lombok'
@@ -90,6 +103,25 @@ project(':bob') {
 project(':nuguri') {
     dependencies {
         implementation project(':core')
+        implementation("org.springframework.boot:spring-boot-starter-mail")
+        implementation("org.springframework.boot:spring-boot-starter-web")
+    }
+}
+
+project(':slack') {
+    dependencies {
+        implementation project(':bob')
+        implementation project(':nuguri')
+        implementation project(':core')
+    }
+}
+
+project(':scheduler') {
+    dependencies {
+        implementation project(':bob')
+        implementation project(':nuguri')
+        implementation project(':core')
+        implementation project(':slack')
     }
 }
 
@@ -102,94 +134,3 @@ patchPluginXml {
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
 }
-
-//test {
-//    useJUnitPlatform()
-//}
-
-//tasks.withType(org.jetbrains.kotlin.gradle.tasks.kotlinCompile).all {
-//    kotlinOptions {
-//        jvmTarget = "1.8"
-//    }
-//}
-
-//plugins {
-//    id("org.springframework.boot") version "2.4.2"
-//    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-//    id("org.jetbrains.kotlin.plugin.allopen") version "1.4.30-RC"
-//    id("org.jetbrains.kotlin.plugin.noarg") version "1.4.30-RC"
-////    kotlin("jvm") version "1.4.21"
-////    kotlin("plugin.spring") version "1.4.21"
-////    kotlin("plugin.jpa") version "1.4.21"
-////    kotlin("kapt") version "1.4.21"
-////    application
-//}
-//
-//allprojects {
-////    apply(plugin = "org.jetbrains.kotlin.jvm")
-////    apply(plugin = "org.springframework.boot")
-////    apply(plugin = "io.spring.dependency-management")
-////    apply(plugin = "org.jetbrains.kotlin.plugin.allopen")
-////    apply(plugin = "org.jetbrains.kotlin.plugin.noarg")
-////    apply(plugin = "org.jetbrains.kotlin.kapt")
-//
-//    allOpen {
-//        annotation("javax.persistence.Entity")
-//    }
-//
-//    noArg {
-//        annotation("javax.persistence.Entity")
-//    }
-//    group = "com.catshi"
-//    version = "0.0.1-SNAPSHOT"
-////    java.sourceCompatibility = JavaVersion.VERSION_11
-//
-//    configurations {
-//        compileOnly {
-////            extendsFrom(configurations.annotationProcessor.get())
-//        }
-//    }
-//
-//    repositories {
-//        mavenCentral()
-//    }
-//    dependencies {
-//        implementation "org.springframework.boot:spring-boot-starter-data-jpa"
-//        implementation("org.springframework.boot:spring-boot-starter-jdbc")
-//        implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-//        implementation("org.jetbrains.kotlin:kotlin-reflect")
-//        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//        implementation("org.springframework.boot:spring-boot-starter-web")
-//        implementation("org.junit.jupiter:junit-jupiter:5.4.2")
-//        implementation("org.junit.jupiter:junit-jupiter:5.4.2")
-//        implementation("com.querydsl:querydsl-jpa")
-//        implementation("com.querydsl:querydsl-apt::jpa")
-//        kapt("com.querydsl:querydsl-apt::jpa")
-//        compileOnly("com.google.code.gson:gson")
-//        compileOnly("org.projectlombok:lombok")
-//        developmentOnly("org.springframework.boot:spring-boot-devtools")
-//        runtimeOnly("com.h2database:h2")
-//        annotationProcessor("org.projectlombok:lombok")
-//        testImplementation("org.springframework.boot:spring-boot-starter-test")
-//    }
-//}
-//
-//project(":bob") {
-//    dependencies {
-//        implementation(project(":core"))
-//    }
-//}
-//
-//project(":nuguri") {
-//    dependencies {
-//        implementation(project(":core"))
-//    }
-//}
-//
-////tasks.withType<Test> {
-////    useJUnitPlatform()
-////}
-//val compileKotlin: KotlinCompile by tasks
-//compileKotlin.kotlinOptions {
-//    freeCompilerArgs = listOf("-Xinline-classes")
-//}

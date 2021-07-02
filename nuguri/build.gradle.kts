@@ -1,5 +1,5 @@
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 //tasks.findByName("bootJar")?.apply {

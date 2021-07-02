@@ -1,9 +1,9 @@
 plugins {
-    application
+  application
 }
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 //tasks.findByName("bootJar")?.apply {

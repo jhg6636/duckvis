@@ -1,2 +1,30 @@
-com/duckvis/core/domain/QUser.java
- com.duckvis.core.domain.QUser
+com/duckvis/core/domain/nuguri/QUserTeam.java
+ com.duckvis.core.domain.nuguri.QUserTeam
+com/duckvis/core/domain/nuguri/QProject.java
+ com.duckvis.core.domain.nuguri.QProject
+com/duckvis/core/domain/bob/QUserPay.java
+ com.duckvis.core.domain.bob.QUserPay
+com/duckvis/core/domain/nuguri/QHoliday.java
+ com.duckvis.core.domain.nuguri.QHoliday
+com/duckvis/core/domain/bob/QBobHistory.java
+ com.duckvis.core.domain.bob.QBobHistory
+com/duckvis/core/domain/shared/QUser.java
+ com.duckvis.core.domain.shared.QUser
+com/duckvis/core/domain/bob/QMenu.java
+ com.duckvis.core.domain.bob.QMenu
+com/duckvis/core/domain/QBaseDuckvisEntity.java
+ com.duckvis.core.domain.QBaseDuckvisEntity
+com/duckvis/core/domain/nuguri/QAttendanceCard.java
+ com.duckvis.core.domain.nuguri.QAttendanceCard
+com/duckvis/core/domain/nuguri/QUserDayOff.java
+ com.duckvis.core.domain.nuguri.QUserDayOff
+com/duckvis/core/domain/bob/QBobTicket.java
+ com.duckvis.core.domain.bob.QBobTicket
+com/duckvis/core/domain/bob/QOverMoney.java
+ com.duckvis.core.domain.bob.QOverMoney
+com/duckvis/core/domain/nuguri/QSubProject.java
+ com.duckvis.core.domain.nuguri.QSubProject
+com/duckvis/core/domain/nuguri/QUserProfile.java
+ com.duckvis.core.domain.nuguri.QUserProfile
+com/duckvis/core/domain/nuguri/QTeam.java
+ com.duckvis.core.domain.nuguri.QTeam

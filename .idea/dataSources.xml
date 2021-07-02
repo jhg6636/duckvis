@@ -8,5 +8,30 @@
       <jdbc-url>jdbc:mysql://localhost:3306/bob_db?serverTimezone=UTC</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="duckvis" uuid="175ec61f-4376-48e6-b8fa-0c713dd94387">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://duckvis.cluster-c9nqgta9jlfd.ap-northeast-2.rds.amazonaws.com:3306/duckvis</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="duckvis_bob@duckvis.cluster-c9nqgta9jlfd.ap-northeast-2.rds.amazonaws.com" uuid="6a6126f6-d61f-4334-8f46-cf099b00218f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://duckvis.cluster-c9nqgta9jlfd.ap-northeast-2.rds.amazonaws.com:3306/duckvis_bob</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <time-zone>UTC</time-zone>
+    </data-source>
+    <data-source source="LOCAL" name="nuguri_db@localhost" uuid="7aa15345-df29-41a8-b62c-ed21a619c5e5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/nuguri_db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="serverTimezone" value="UTC" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

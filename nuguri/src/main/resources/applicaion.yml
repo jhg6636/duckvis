@@ -1,0 +1,9 @@
+slack:
+  bot-token: "xoxb-565676797042-1837007620771-bWvSrw3l4RwXjJr48wsWGqKC"
+  bob:
+    channel: "CSDNEMSAK"
+    manager: "지영"
+  nuguri:
+    pond-channel: ""
+    channel: ""
+    coretime-channel: ""

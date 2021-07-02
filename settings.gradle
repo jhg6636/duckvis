@@ -3,3 +3,5 @@ rootProject.name = "duckvis"
 include 'bob'
 include 'core'
 include 'nuguri'
+include 'slack'
+include 'scheduler'

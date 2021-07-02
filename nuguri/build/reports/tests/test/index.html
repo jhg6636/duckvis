@@ -20,7 +20,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">9</div>
+<div class="counter">135</div>
 <p>tests</p>
 </div>
 </td>
@@ -32,13 +32,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.589s</div>
+<div class="counter">2.718s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,7 +47,7 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
+<div class="infoBox skipped" id="successRate">
 <div class="percent">100%</div>
 <p>successful</p>
 </div>
@@ -58,13 +58,25 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Packages</a>
+<a href="#tab0">Ignored tests</a>
 </li>
 <li>
-<a href="#tab1">Classes</a>
+<a href="#tab1">Packages</a>
+</li>
+<li>
+<a href="#tab2">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Ignored tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/com.duckvis.nuguri.mail.NuguriMailSenderTest.html">NuguriMailSenderTest</a>.
+<a href="classes/com.duckvis.nuguri.mail.NuguriMailSenderTest.html#메일을 보낸다()">메일을 보낸다()</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -80,18 +92,118 @@
 <tbody>
 <tr>
 <td class="success">
-<a href="packages/com.catshi.nuguri.services.html">com.catshi.nuguri.services</a>
+<a href="packages/com.duckvis.core.domain.bob.html">com.duckvis.core.domain.bob</a>
 </td>
-<td>9</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.589s</td>
+<td>0.003s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.html">com.duckvis.nuguri</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.004s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.domain.html">com.duckvis.nuguri.domain</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.002s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.dtos.html">com.duckvis.nuguri.dtos</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="skipped">
+<a href="packages/com.duckvis.nuguri.mail.html">com.duckvis.nuguri.mail</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0.001s</td>
+<td class="skipped">-</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.repository.html">com.duckvis.nuguri.repository</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.144s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.services.html">com.duckvis.nuguri.services</a>
+</td>
+<td>109</td>
+<td>0</td>
+<td>0</td>
+<td>2.442s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.types.html">com.duckvis.nuguri.types</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.ui.html">com.duckvis.nuguri.ui</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.107s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.ui.command.html">com.duckvis.nuguri.ui.command</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.duckvis.nuguri.utils.html">com.duckvis.nuguri.utils</a>
+</td>
+<td>15</td>
+<td>0</td>
+<td>0</td>
+<td>0.014s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -107,12 +219,442 @@
 <tbody>
 <tr>
 <td class="success">
-<a href="classes/com.catshi.nuguri.services.AttendanceServiceTest.html">com.catshi.nuguri.services.AttendanceServiceTest</a>
+<a href="classes/com.duckvis.core.domain.bob.BobTeamListTest.html">com.duckvis.core.domain.bob.BobTeamListTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.003s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.NuguriApplicationTests.html">com.duckvis.nuguri.NuguriApplicationTests</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.004s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.domain.AttendanceCardKtTest.html">com.duckvis.nuguri.domain.AttendanceCardKtTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.002s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.dtos.WorkDtoTypeRequestTest.html">com.duckvis.nuguri.dtos.WorkDtoTypeRequestTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="skipped">
+<a href="classes/com.duckvis.nuguri.mail.NuguriMailSenderTest.html">com.duckvis.nuguri.mail.NuguriMailSenderTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0.001s</td>
+<td class="skipped">-</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.repository.AttendanceCardNuguriRepositoryTest.html">com.duckvis.nuguri.repository.AttendanceCardNuguriRepositoryTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.144s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.AddAdminServiceTest.html">com.duckvis.nuguri.services.AddAdminServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.033s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.AddManagerServiceTest.html">com.duckvis.nuguri.services.AddManagerServiceTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0.186s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.AddTeamMemberServiceTest.html">com.duckvis.nuguri.services.AddTeamMemberServiceTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.102s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.AddTeamServiceTest.html">com.duckvis.nuguri.services.AddTeamServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.125s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.ChangeProfileServiceTest.html">com.duckvis.nuguri.services.ChangeProfileServiceTest</a>
+</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0.088s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.ChangeTeamNameServiceTest.html">com.duckvis.nuguri.services.ChangeTeamNameServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.048s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.CoreTimeStatisticsServiceTest.html">com.duckvis.nuguri.services.CoreTimeStatisticsServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.038s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.CsvExportServiceTest.html">com.duckvis.nuguri.services.CsvExportServiceTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.043s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.DeleteAdminServiceTest.html">com.duckvis.nuguri.services.DeleteAdminServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.026s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.DeleteManagerServiceTest.html">com.duckvis.nuguri.services.DeleteManagerServiceTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0.120s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.DeleteTeamMemberServiceTest.html">com.duckvis.nuguri.services.DeleteTeamMemberServiceTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0.076s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.DeleteTeamServiceTest.html">com.duckvis.nuguri.services.DeleteTeamServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.025s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.HowLongIWorkedServiceTest.html">com.duckvis.nuguri.services.HowLongIWorkedServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.037s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.LastLogInServiceTest.html">com.duckvis.nuguri.services.LastLogInServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.023s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.LogInServiceTest.html">com.duckvis.nuguri.services.LogInServiceTest</a>
+</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0.139s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.LogOutServiceTest.html">com.duckvis.nuguri.services.LogOutServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.056s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.ManagerListServiceTest.html">com.duckvis.nuguri.services.ManagerListServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.020s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.MemberExitServiceTest.html">com.duckvis.nuguri.services.MemberExitServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.037s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.MistakeServiceTest.html">com.duckvis.nuguri.services.MistakeServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.030s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.MyTeamServiceTest.html">com.duckvis.nuguri.services.MyTeamServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.088s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.NowServiceTest.html">com.duckvis.nuguri.services.NowServiceTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.068s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.ProjectEndServiceTest.html">com.duckvis.nuguri.services.ProjectEndServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.012s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.ProjectStartServiceTest.html">com.duckvis.nuguri.services.ProjectStartServiceTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.052s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.RegisterUserServiceTest.html">com.duckvis.nuguri.services.RegisterUserServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.020s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.SetDayOffServiceTest.html">com.duckvis.nuguri.services.SetDayOffServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.060s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.SetHolidaysServiceTest.html">com.duckvis.nuguri.services.SetHolidaysServiceTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.040s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.SetWorkDaysServiceTest.html">com.duckvis.nuguri.services.SetWorkDaysServiceTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.466s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.StartCoreTimeServiceTest.html">com.duckvis.nuguri.services.StartCoreTimeServiceTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.040s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.StatisticsActionTest.html">com.duckvis.nuguri.services.StatisticsActionTest</a>
 </td>
 <td>9</td>
 <td>0</td>
 <td>0</td>
-<td>0.589s</td>
+<td>0.211s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.TeamInfoServiceTest.html">com.duckvis.nuguri.services.TeamInfoServiceTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.024s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.ThisMonthInfoServiceTest.html">com.duckvis.nuguri.services.ThisMonthInfoServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.019s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.services.WorkTimeServiceTest.html">com.duckvis.nuguri.services.WorkTimeServiceTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.090s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.types.UserProfileChangeTypeTest.html">com.duckvis.nuguri.types.UserProfileChangeTypeTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.ui.NuguriSlackControllerTest.html">com.duckvis.nuguri.ui.NuguriSlackControllerTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.107s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.ui.command.CommandTypeTest.html">com.duckvis.nuguri.ui.command.CommandTypeTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.utils.DateTimeMakerTest.html">com.duckvis.nuguri.utils.DateTimeMakerTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0.005s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.utils.StartAndEndTimeTest.html">com.duckvis.nuguri.utils.StartAndEndTimeTest</a>
+</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0.005s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.duckvis.nuguri.utils.TimeUtilsTest.html">com.duckvis.nuguri.utils.TimeUtilsTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.004s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
@@ -126,7 +668,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.7.1</a> at 2021. 3. 23. 오후 4:24:05</p>
+<a href="http://www.gradle.org">Gradle 6.7.1</a> at 2021. 6. 25. 오전 4:23:12</p>
 </div>
 </div>
 </body>
