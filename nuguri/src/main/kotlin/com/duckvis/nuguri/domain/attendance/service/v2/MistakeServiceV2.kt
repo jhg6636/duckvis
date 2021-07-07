@@ -11,6 +11,7 @@ import com.duckvis.core.exceptions.nuguri.NuguriException
 import com.duckvis.core.types.nuguri.service.CommandMinorType
 import com.duckvis.core.types.shared.UserPathType
 import com.duckvis.core.utils.DateTimeMaker
+import com.duckvis.core.utils.dayStartTime
 import com.duckvis.nuguri.domain.attendance.service.WorkTimeService
 import com.duckvis.nuguri.repository.ProjectNuguriRepository
 import com.duckvis.nuguri.repository.SubProjectNuguriRepository
@@ -56,7 +57,11 @@ class MistakeServiceV2(
       params.workTypeDto
     )
 
-    val datetime = LocalDateTime.of(params.mistakeDate ?: DateTimeMaker.nowDate(), LocalTime.MIDNIGHT)
+    val datetime = if (params.mistakeDate != null) {
+      DateTimeMaker.nowDateTime().dayStartTime.plusHours(9)
+    } else {
+      LocalDateTime.of(params.mistakeDate, LocalTime.NOON)
+    }
 
     attendanceCardRepository.save(AttendanceCard(mistake, datetime))
 

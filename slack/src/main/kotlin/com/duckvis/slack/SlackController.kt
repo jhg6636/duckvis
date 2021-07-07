@@ -194,7 +194,8 @@ class SlackController(
     user: User,
     isManager: Boolean
   ): Boolean {
-    return channel == user.code && nuguriService.type.commandMajorType == CommandMajorType.ATTENDANCE && !(user.isAdmin || isManager)
+    return channel.startsWith("D") && nuguriService.type.commandMajorType == CommandMajorType.ATTENDANCE && !(user.isAdmin || isManager)
+    // D로 시작한다 = DM으로 보냈다
   }
 
   private fun getNuguriService(text: String): NuguriServiceV2 {
