@@ -1,4 +1,4 @@
-package com.duckvis.core.types.nuguri.service.params
+package com.duckvis.core.dtos.nuguri.service.params
 
 import com.duckvis.core.types.nuguri.HelpOption
 

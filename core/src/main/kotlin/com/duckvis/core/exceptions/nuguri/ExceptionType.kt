@@ -45,5 +45,6 @@ enum class ExceptionType(val message: String) {
   SUB_PROJECT_NAME_OR_NICKNAME_ALREADY_EXISTS("서브플젝의 이름 또는 별명이 이미 존재해요~"),
   NO_SUCH_SUB_PROJECT("서브플젝명/서브플젝별명 또는 상위플젝명을 확인해 주세요~"),
   SUB_PROJECT_HAS_NO_PROJECT("서브플젝 상위의 플젝을 확인해 주세요~"),
-  MISTAKE_FUTURE("미래의 날짜에 실수(ㅠㅠ)를 입력할 수 없어요~")
+  MISTAKE_FUTURE("미래의 날짜에 실수(ㅠㅠ)를 입력할 수 없어요~"),
+  HAVE_NO_TEAM("팀 등록을 먼저 진행해 주세요~")
 }

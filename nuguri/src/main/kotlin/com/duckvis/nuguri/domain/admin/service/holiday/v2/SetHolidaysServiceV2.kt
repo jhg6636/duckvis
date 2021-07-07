@@ -3,31 +3,28 @@ package com.duckvis.nuguri.domain.admin.service.holiday.v2
 import com.duckvis.core.domain.nuguri.Holiday
 import com.duckvis.core.domain.nuguri.HolidayRepository
 import com.duckvis.core.domain.nuguri.UserProfileRepository
+import com.duckvis.core.dtos.nuguri.service.params.NuguriServiceRequestParameterDto
+import com.duckvis.core.dtos.nuguri.service.params.v2.domain.admin.holiday.NuguriSetHolidaysRequestParameterDto
 import com.duckvis.core.exceptions.nuguri.ExceptionType
 import com.duckvis.core.exceptions.nuguri.NuguriException
 import com.duckvis.core.types.nuguri.HolidayType
-import com.duckvis.core.types.nuguri.service.CommandMajorType
-import com.duckvis.core.types.nuguri.service.params.NuguriAdminRequestParameterDto
-import com.duckvis.core.types.nuguri.service.params.NuguriServiceRequestParameterDto
-import com.duckvis.nuguri.dtos.ServiceRequestDtoV2
+import com.duckvis.core.types.nuguri.service.CommandMinorType
 import com.duckvis.nuguri.services.NuguriServiceV2
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 
-@Service
+@Service("SET_HOLIDAYS_V2")
 class SetHolidaysServiceV2(
   @Autowired private val holidayRepository: HolidayRepository,
   @Autowired private val userProfileRepository: UserProfileRepository,
 ) : NuguriServiceV2 {
 
-  override val majorType: CommandMajorType
-    get() = CommandMajorType.ADMIN
+  override val type: CommandMinorType
+    get() = CommandMinorType.SET_HOLIDAYS
 
-  override fun response(serviceRequestDto: ServiceRequestDtoV2): String {
-    val params = serviceRequestDto.parameter
-    parameterCheck(params)
-    params as NuguriAdminRequestParameterDto
+  override fun response(serviceRequestDto: NuguriServiceRequestParameterDto): String {
+    val params = serviceRequestDto as NuguriSetHolidaysRequestParameterDto
 
     val dates = params.dates
     checkAlreadyHoliday(dates)
@@ -42,12 +39,6 @@ class SetHolidaysServiceV2(
         "${holiday.dayString}일"
       }
     }이 휴일로 지정되었어요~"
-  }
-
-  override fun parameterCheck(requestParameterDto: NuguriServiceRequestParameterDto) {
-    if (requestParameterDto !is NuguriAdminRequestParameterDto) {
-      throw NuguriException(ExceptionType.TYPO)
-    }
   }
 
   private fun checkAlreadyHoliday(dates: List<LocalDate>) {

@@ -32,4 +32,16 @@ class SubProjectNuguriRepository(
       ?: throw NuguriException(ExceptionType.NO_SUCH_SUB_PROJECT)
   }
 
+  fun isAlreadyExisting(name: String, nickname: String, projectId: Long): Boolean {
+    return queryFactory
+      .select(subProject)
+      .from(subProject)
+      .where(
+        subProject.projectId.eq(projectId),
+        subProject.name.eq(name).or(subProject.nickname.eq(nickname))
+      )
+      .fetch()
+      .isNotEmpty()
+  }
+
 }

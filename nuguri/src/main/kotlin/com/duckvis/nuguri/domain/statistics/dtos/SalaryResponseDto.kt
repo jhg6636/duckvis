@@ -14,7 +14,7 @@ data class SalaryResponseDto(
   val nightDurationSeconds: Int,
   val dayOff: Int,
   val dayOffSick: Int,
-  val lessThanTarget: Boolean
+  val overTarget: Boolean
 ) {
 
   private val allDurationHours: Double
@@ -30,13 +30,20 @@ data class SalaryResponseDto(
     get() = nightDurationSeconds.secondsToHours
 
   val basicString: String
-    get() = "$teamName,$name,${allDurationSeconds.secondsToShortString},${extendedDurationSeconds.secondsToShortString}," +
-      "${holidayDurationSeconds.secondsToShortString},${nightDurationSeconds.secondsToShortString},$lessThanTarget"
+    //팀명,이름,총근로시간,연장,휴일,야간,총근로시간-연장,총근로시간,연장,휴일,야간,총근로시간-연장,휴가 및 기타,병가,연장확인,비고
+    get() {
+      return "$teamName,$name,${allDurationSeconds.secondsToShortString},${extendedDurationSeconds.secondsToShortString}," +
+        "${holidayDurationSeconds.secondsToShortString},${nightDurationSeconds.secondsToShortString}," +
+        "${(allDurationSeconds - extendedDurationSeconds).secondsToShortString}$allDurationHours,$extendedDurationHours," +
+        "$holidayDurationHours$nightDurationHours,${allDurationHours-extendedDurationHours}$dayOff,$dayOffSick,$overTarget"
+    }
 
   val additionalString: String
+  //"사원코드,이름,총근로시간,연장,휴일,야간,총근로시간-연장,총근로시간,연장,휴일,야간,총근로시간-연장,휴가 및 기타,병가,연장확인,비고
     get() = "$salaryCode,$name,${allDurationSeconds.secondsToShortString},${extendedDurationSeconds.secondsToShortString}," +
-      "${holidayDurationSeconds.secondsToShortString},${nightDurationSeconds.secondsToShortString},$lessThanTarget," +
-      "$allDurationHours,$extendedDurationHours,$holidayDurationHours,$nightDurationHours,${allDurationSeconds - extendedDurationSeconds}," +
-      "$dayOff,$dayOffSick"
+      "${holidayDurationSeconds.secondsToShortString},${nightDurationSeconds.secondsToShortString}," +
+    "${(allDurationSeconds-extendedDurationSeconds).secondsToShortString}," +
+      "$allDurationHours,$extendedDurationHours,$holidayDurationHours,$nightDurationHours,${allDurationHours - extendedDurationHours}," +
+      "$dayOff,$dayOffSick,$overTarget"
 
 }

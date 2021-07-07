@@ -82,7 +82,7 @@ enum class CommandMinorType(
     basePermission = NuguriServicePermission.MEMBER,
     commandMajorType = CommandMajorType.ATTENDANCE,
     minimumParams = 0,
-    maximumParams = 1,
+    maximumParams = 2,
   ),
 
   /**
@@ -93,21 +93,21 @@ enum class CommandMinorType(
     basePermission = NuguriServicePermission.MEMBER,
     commandMajorType = CommandMajorType.STATISTICS,
     minimumParams = 0,
-    maximumParams = 1,
+    maximumParams = 9,
   ),
   CORE_TIME_STATISTICS(
     commands = listOf("!코어타임"),
     basePermission = NuguriServicePermission.ADMIN,
     commandMajorType = CommandMajorType.STATISTICS,
-    minimumParams = 1,
-    maximumParams = 9,
+    minimumParams = 0,
+    maximumParams = 1,
   ),
   CSV_EXPORT(
     commands = listOf("!익스포트"),
     basePermission = NuguriServicePermission.ADMIN,
     commandMajorType = CommandMajorType.STATISTICS,
-    minimumParams = 1,
-    maximumParams = 2,
+    minimumParams = 2,
+    maximumParams = 3,
   ),
 
   /**
@@ -133,7 +133,7 @@ enum class CommandMinorType(
     basePermission = NuguriServicePermission.ADMIN,
     commandMajorType = CommandMajorType.ADMIN,
     minimumParams = 0,
-    maximumParams = 1,
+    maximumParams = 2,
   ),
 
   // user
@@ -206,7 +206,7 @@ enum class CommandMinorType(
   // project
   ADD_SUB_PROJECT(
     commands = listOf("!서브플젝추가"),
-    basePermission = NuguriServicePermission.MANAGER,
+    basePermission = NuguriServicePermission.MEMBER,
     commandMajorType = CommandMajorType.ADMIN,
     minimumParams = 3,
     maximumParams = 3,
@@ -325,6 +325,20 @@ enum class CommandMinorType(
     minimumParams = 0,
     maximumParams = 0,
   ),
+  MEMBER_LIST(
+    commands = listOf("!사원목록"),
+    basePermission = NuguriServicePermission.MEMBER,
+    commandMajorType = CommandMajorType.ADMIN,
+    minimumParams = 0,
+    maximumParams = 0,
+  ),
+  NOTHING(
+    commands = listOf(),
+    basePermission = NuguriServicePermission.EVERYBODY,
+    commandMajorType = CommandMajorType.GENERAL,
+    minimumParams = 0,
+    maximumParams = 0,
+  )
   ;
 
   companion object {

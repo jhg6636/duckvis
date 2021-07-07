@@ -2,20 +2,20 @@ package com.duckvis.nuguri.domain.attendance.service.v2
 
 import com.duckvis.core.domain.nuguri.ProjectRepository
 import com.duckvis.core.domain.shared.UserRepository
+import com.duckvis.core.dtos.nuguri.service.params.NuguriServiceRequestParameterDto
+import com.duckvis.core.dtos.nuguri.service.params.v2.domain.attendance.NuguriAttendanceRequestParameterDto
 import com.duckvis.core.exceptions.nuguri.ExceptionType
 import com.duckvis.core.exceptions.nuguri.NuguriException
-import com.duckvis.core.types.nuguri.service.CommandMajorType
-import com.duckvis.core.types.nuguri.service.params.NuguriAttendanceRequestParameterDto
+import com.duckvis.core.types.nuguri.service.CommandMinorType
 import com.duckvis.core.types.shared.UserPathType
 import com.duckvis.nuguri.domain.attendance.service.WorkTimeService
-import com.duckvis.nuguri.dtos.ServiceRequestDtoV2
 import com.duckvis.nuguri.repository.AttendanceCardNuguriRepository
 import com.duckvis.nuguri.services.NuguriServiceV2
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
-@Service
+@Service("LOGOUT_V2")
 class LogOutServiceV2(
   @Autowired private val attendanceCardNuguriRepository: AttendanceCardNuguriRepository,
   @Autowired private val projectRepository: ProjectRepository,
@@ -23,13 +23,11 @@ class LogOutServiceV2(
   @Autowired private val userRepository: UserRepository,
 ) : NuguriServiceV2 {
 
-  override val majorType: CommandMajorType
-    get() = CommandMajorType.ATTENDANCE
+  override val type: CommandMinorType
+    get() = CommandMinorType.LOGOUT
 
-  override fun response(serviceRequestDto: ServiceRequestDtoV2): String {
-    val params = serviceRequestDto.parameter
-    parameterCheck(params)
-    params as NuguriAttendanceRequestParameterDto
+  override fun response(serviceRequestDto: NuguriServiceRequestParameterDto): String {
+    val params = serviceRequestDto as NuguriAttendanceRequestParameterDto
 
     val user = userRepository.findByCodeAndPath(params.userCode, UserPathType.SLACK) ?: throw NuguriException(
       ExceptionType.NO_SUCH_USER

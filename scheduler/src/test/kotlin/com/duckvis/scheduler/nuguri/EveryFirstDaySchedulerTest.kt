@@ -83,7 +83,7 @@ internal class EveryFirstDaySchedulerTest(
     everyFirstDayScheduler.setWeekends()
 
     // then
-    assertThat(holidayRepository.count()).isEqualTo(8) // 6월 기준
+    assertThat(holidayRepository.count()).isEqualTo(9) // 7월 기준
   }
 
   @Test

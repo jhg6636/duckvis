@@ -121,7 +121,7 @@ class NormalStatisticsAction(
   fun leftTimeMessage(user: User, cards: List<AttendanceCard>): String {
     val userProfile = userProfileRepository.findByUserId(user.id) ?: throw NuguriException(ExceptionType.NO_SUCH_USER)
     val doneTime = cards.sumBy { card -> card.durationSeconds ?: 0 }
-    val targetSeconds = userProfile.realTargetSeconds
+    val targetSeconds = userProfile.targetWorkSeconds
     log.info("leftDay {}, targetSeconds {}, doneTime {}", leftDays(), targetSeconds, doneTime)
     return "\n이번 달 근무시간까지 ${(targetSeconds - doneTime).secondsToString}만큼 남았어요.\n" +
       "앞으로 하루에 ${((targetSeconds - doneTime) / leftDays()).secondsToString}씩 일하시면 되겠습니다~\n" +

@@ -1,6 +1,6 @@
 package com.duckvis.nuguri.domain.statistics.dtos
 
-import com.duckvis.core.types.nuguri.service.params.NuguriStatisticsRequestParameterDto
+import com.duckvis.core.dtos.nuguri.service.params.v2.domain.statistics.NuguriStatisticsRequestParameterDto
 
 data class AdminStatisticsRequestDto(
   val projectName: String? = null,

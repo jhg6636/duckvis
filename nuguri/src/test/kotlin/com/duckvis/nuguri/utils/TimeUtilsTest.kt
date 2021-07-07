@@ -1,23 +1,24 @@
 package com.duckvis.nuguri.utils
 
-import com.duckvis.core.utils.toDuration
+import com.duckvis.core.utils.toDurationSeconds
 import org.junit.jupiter.api.Test
+import java.lang.NumberFormatException
 import java.time.LocalDate
 import java.time.format.DateTimeParseException
 
 class TimeUtilsTest {
   @Test
   fun `한글을 duration으로 변환한다`() {
-    org.junit.jupiter.api.assertThrows<DateTimeParseException> {
-      println("ㄱ ㄱㅂ".toDuration)
+    org.junit.jupiter.api.assertThrows<NumberFormatException> {
+      println("ㄱ ㄱㅂ".toDurationSeconds)
     }
   }
 
   @Test
   fun `숫자를 duration으로 변환한다`() {
-    println("02".toDuration)
-    println("2:9".toDuration)
-    println("11:18".toDuration)
+    println("02".toDurationSeconds)
+    println("2:9".toDurationSeconds)
+    println("11:18".toDurationSeconds)
   }
 
   @Test

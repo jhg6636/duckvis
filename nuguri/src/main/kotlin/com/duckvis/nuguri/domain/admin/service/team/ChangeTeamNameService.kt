@@ -36,12 +36,12 @@ class ChangeTeamNameService(
   @Transactional
   fun changeTeamName(originalName: String, newName: String) {
     if (originalName == newName) throw NuguriException(ExceptionType.CANNOT_CHANGE)
-    val team = teamRepository.findByName(originalName) ?: throw NuguriException(ExceptionType.NO_SUCH_TEAM)
+    val originalTeam = teamRepository.findByName(originalName) ?: throw NuguriException(ExceptionType.NO_SUCH_TEAM)
     val teamNames = teamRepository.findAll().map { team -> team.name }
     if (teamNames.any { teamName -> teamName == newName }) {
       throw NuguriException(ExceptionType.TEAM_NAME_ALREADY_EXISTS)
     }
-    team.changeName(newName)
+    originalTeam.changeName(newName)
   }
 
 }

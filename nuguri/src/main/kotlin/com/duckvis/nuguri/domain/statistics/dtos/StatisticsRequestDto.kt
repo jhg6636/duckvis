@@ -3,7 +3,7 @@ package com.duckvis.nuguri.domain.statistics.dtos
 import com.duckvis.core.domain.nuguri.UserTeam
 import com.duckvis.core.dtos.nuguri.WorkTypeDto
 import com.duckvis.core.types.nuguri.SpecialStatisticsType
-import com.duckvis.core.types.nuguri.service.params.NuguriStatisticsRequestParameterDto
+import com.duckvis.core.dtos.nuguri.service.params.v2.domain.statistics.NuguriStatisticsRequestParameterDto
 import java.time.LocalDateTime
 
 data class StatisticsRequestDto(

@@ -7,10 +7,11 @@ import com.duckvis.core.domain.nuguri.QUserTeam.userTeam
 import com.duckvis.core.domain.nuguri.SubProject
 import com.duckvis.core.domain.shared.QUser.user
 import com.duckvis.core.domain.shared.User
-import com.duckvis.core.types.nuguri.service.params.NuguriStatisticsRequestParameterDto
+import com.duckvis.core.dtos.nuguri.service.params.v2.domain.statistics.NuguriStatisticsRequestParameterDto
 import com.duckvis.core.types.shared.UserLevelType
 import com.querydsl.jpa.impl.JPAQueryFactory
 import org.springframework.stereotype.Component
+import java.time.LocalDateTime
 
 @Component
 class StatisticsNuguriRepository(
@@ -22,7 +23,9 @@ class StatisticsNuguriRepository(
     admin: User,
     project: Project?,
     subProject: SubProject?,
-    member: User?,
+    memberIds: List<Long>,
+    from: LocalDateTime,
+    to: LocalDateTime,
   ): List<AttendanceCard> {
     val userIds = checkableUserIds(params, admin)
 
@@ -36,8 +39,8 @@ class StatisticsNuguriRepository(
     } else {
       attendanceCard.isNotNull
     }
-    val memberQuery = if (member != null) {
-      attendanceCard.userId.eq(member.id)
+    val memberQuery = if (memberIds.isNotEmpty()) {
+      attendanceCard.userId.`in`(memberIds)
     } else {
       attendanceCard.isNotNull
     }
@@ -49,6 +52,7 @@ class StatisticsNuguriRepository(
       .and(projectQuery)
       .and(subProjectQuery)
       .and(memberQuery)
+      .and(attendanceCard.loginDateTime.between(from, to))
 
     return queryFactory
       .select(attendanceCard)

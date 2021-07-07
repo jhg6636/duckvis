@@ -1,7 +1,8 @@
-package com.duckvis.core.types.nuguri.service.params
+package com.duckvis.core.dtos.nuguri.service.params.v2.domain.attendance
 
 import com.duckvis.core.dtos.nuguri.WorkTypeDto
 import com.duckvis.core.types.nuguri.service.CommandMinorType
+import com.duckvis.core.dtos.nuguri.service.params.NuguriServiceRequestParameterDto
 import com.duckvis.core.utils.DateTimeMaker
 import com.duckvis.core.utils.toDurationSeconds
 import java.time.LocalDate
@@ -36,9 +37,9 @@ data class NuguriAttendanceRequestParameterDto(
         else -> null
       }
       val workTypeDto = WorkTypeDto.of(splitText)
-      val mistakeDate = when (command) {
-        CommandMinorType.MISTAKE -> DateTimeMaker.stringToDate(splitText.last())
-        else -> null
+      val mistakeDate = when {
+        command == CommandMinorType.MISTAKE && splitText.size == 4 -> DateTimeMaker.stringToDate(splitText[3])
+        else -> DateTimeMaker.nowDate()
       }
 
       return NuguriAttendanceRequestParameterDto(

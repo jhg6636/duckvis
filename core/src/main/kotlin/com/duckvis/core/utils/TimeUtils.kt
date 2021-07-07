@@ -80,16 +80,6 @@ val Int?.secondsToShortString: String
 val Int.secondsToHours: Double
   get() = round(this / 3600.0 * 100) / 100
 
-val String.toDuration: Duration
-  get() {
-    val formatterHourAndMinute = DateTimeFormatter.ofPattern("H:m")
-    val formatterHourOnly = DateTimeFormatter.ofPattern("H")
-    if (this.contains(':')) {
-      return Duration.between(LocalTime.of(0, 0, 0), LocalTime.parse(this, formatterHourAndMinute))
-    }
-    return Duration.between(LocalTime.of(0, 0, 0), LocalTime.parse(this, formatterHourOnly))
-  }
-
 val String.toDurationSeconds: Int
   get() {
     val splitString = this.split(":")

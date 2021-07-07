@@ -63,6 +63,7 @@ class CsvExportService(
         files.forEach { file -> file.delete() }
         "${email}로 익스포트 CSV 파일들을 전송했어요~"
       }
+      CsvOption.SEYEOB -> ""
     }
   }
 
@@ -101,7 +102,7 @@ class CsvExportService(
         nightDurationSeconds = workTimeDto.night,
         dayOff = userProfile.dayOff,
         dayOffSick = userProfile.dayOffSick,
-        lessThanTarget = notExtendedDurationSeconds >= userProfile.targetWorkSeconds
+        overTarget = notExtendedDurationSeconds >= userProfile.targetWorkSeconds
       )
     }
 

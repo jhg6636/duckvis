@@ -1,10 +1,11 @@
-package com.duckvis.core.types.nuguri.service.params
+package com.duckvis.core.dtos.nuguri.service.params.v2.domain.statistics
 
 import com.duckvis.core.domain.nuguri.UserTeam
 import com.duckvis.core.dtos.nuguri.WorkTypeDto
 import com.duckvis.core.exceptions.nuguri.ExceptionType
 import com.duckvis.core.exceptions.nuguri.NuguriException
 import com.duckvis.core.types.nuguri.SpecialStatisticsType
+import com.duckvis.core.dtos.nuguri.service.params.NuguriServiceRequestParameterDto
 import com.duckvis.core.utils.*
 import java.time.LocalDateTime
 
@@ -46,14 +47,21 @@ data class NuguriStatisticsRequestParameterDto(
 
       val workTypeDto = WorkTypeDto.of(splitText)
 
-      val statisticsType = when (splitText.first()) {
-        "!월간통계", "!ㅇㄱㅌㄱ", "!drxr" -> SpecialStatisticsType.MONTHLY
-        "!주간통계", "!ㅈㄱㅌㄱ", "!wrxr" -> SpecialStatisticsType.WEEKLY
+      val statisticsType = when {
+        listOf("!월간통계", "!ㅇㄱㅌㄱ", "!drxr").contains(splitText.first()) -> SpecialStatisticsType.MONTHLY
+        listOf("!주간통계", "!ㅈㄱㅌㄱ", "!wrxr").contains(splitText.first()) -> SpecialStatisticsType.WEEKLY
+        splitText.contains("^모든플젝") -> SpecialStatisticsType.ALL_PROJECT
         else -> SpecialStatisticsType.NORMAL
       }
 
-      val projectAndSubProject = splitText.singleOrNull { text -> text.startsWith("^") && !text.startsWith("^^") }
-      val project = projectAndSubProject?.split(" ")?.first()
+      val oneQuote = splitText.filter { text -> text.startsWith("^") && !text.startsWith("^^") }
+      val projectAndSubProject = when (oneQuote.size) {
+        1 -> oneQuote.singleOrNull { text -> text != "^전체" }
+        2 -> oneQuote.firstOrNull() { text -> text != "^전체" }
+        0 -> null
+        else -> throw NuguriException(ExceptionType.TYPO)
+      }
+      val project = projectAndSubProject?.split(" ")?.first()?.substring(1)
       val subProject = projectAndSubProject?.split(" ")?.getOrNull(1)
 
       return NuguriStatisticsRequestParameterDto(
@@ -69,7 +77,7 @@ data class NuguriStatisticsRequestParameterDto(
         teamName = splitText.singleOrNull { text -> text.startsWith("^^") && !text.startsWith("^^^") },
         memberName = splitText.singleOrNull { text -> text.startsWith("^^^") },
         isEveryBody = splitText.contains("^전체"),
-        isAdmin = false // TODO
+        isAdmin = splitText.any { text -> text.startsWith("^^") } || splitText.contains("^전체")
       )
     }
 

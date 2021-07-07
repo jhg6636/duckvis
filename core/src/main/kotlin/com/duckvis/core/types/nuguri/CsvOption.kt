@@ -5,14 +5,15 @@ import com.duckvis.core.exceptions.nuguri.NuguriException
 
 enum class CsvOption {
   SALARY,
+  SEYEOB,
   ;
 
   companion object {
     fun of(params: List<String>): CsvOption {
-      return if (params[0] == "%인건비") {
-        SALARY
-      } else {
-        throw NuguriException(ExceptionType.TYPO)
+      return when {
+        params.contains("%인건비") -> SALARY
+        params.contains("%세엽") -> SEYEOB
+        else -> throw NuguriException(ExceptionType.TYPO)
       }
     }
   }

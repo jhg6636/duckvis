@@ -1,6 +1,6 @@
 package com.duckvis.nuguri.dtos
 
-import com.duckvis.core.types.nuguri.service.params.NuguriServiceRequestParameterDto
+import com.duckvis.core.dtos.nuguri.service.params.NuguriServiceRequestParameterDto
 
 data class ServiceRequestDtoV2(
   val parameter: NuguriServiceRequestParameterDto,
