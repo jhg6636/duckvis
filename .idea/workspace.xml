@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3214924-9b5b-4376-b0fc-d59c9b8296c2" name="Default Changelist" comment="진짜 최종본">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a3214924-9b5b-4376-b0fc-d59c9b8296c2" name="Default Changelist" comment="봇 토큰 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -276,7 +274,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.slack [bootJar]">
+  <component name="RunManager" selected="Gradle.slack::Users:jhg:IdeaProjects:duckvis:scheduler [bootJar]">
     <configuration name="BobSlackHandlerTest.!금액 10000 0420 점심 %미지원" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -751,6 +749,7 @@
       <workItem from="1625207213132" duration="35487000" />
       <workItem from="1625692839158" duration="1920000" />
       <workItem from="1625697223945" duration="278000" />
+      <workItem from="1625703597023" duration="104000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1616140920028</created>
@@ -801,7 +800,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625697245363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="빌드 되는 버전">
+      <created>1625703652271</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625703652271</updated>
+    </task>
+    <task id="LOCAL-00009" summary="봇 토큰 수정">
+      <created>1625703687871</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625703687872</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -830,7 +843,9 @@
     <MESSAGE value="7/2 본격 리팩터링 전 푸시" />
     <MESSAGE value="훈련소 전 리팩터링 완료" />
     <MESSAGE value="진짜 최종본" />
-    <option name="LAST_COMMIT_MESSAGE" value="진짜 최종본" />
+    <MESSAGE value="빌드 되는 버전" />
+    <MESSAGE value="봇 토큰 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="봇 토큰 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

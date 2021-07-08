@@ -15,7 +15,7 @@ class SlackConstants {
 
 
     // prod
-    const val BOT_TOKEN = "xoxb-565676797042-1837007620771-WmohufadpLOLfHPo91rORbfj"
+    const val BOT_TOKEN = "xoxb-565676797042-1837007620771-S32EM646lv14RK0FoCRkddJ1"
     const val NUGURI_CHANNEL = "C012KFG8K0B"
     const val BOB_CHANNEL = "CSDNEMSAK"
     const val NUGURI_POND_CHANNEL = "C0129P8R2NB"
